@@ -1,11 +1,9 @@
 package com.epam.dfilatov.config;
 
+import com.epam.dfilatov.filters.SimpleFilter;
 import com.epam.dfilatov.servlets.JavaConfigServlet;
 
-import javax.servlet.ServletContainerInitializer;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRegistration;
+import javax.servlet.*;
 import java.util.Set;
 
 public class ApplicationConfigInitializer implements ServletContainerInitializer {
@@ -14,5 +12,7 @@ public class ApplicationConfigInitializer implements ServletContainerInitializer
         JavaConfigServlet servlet = new JavaConfigServlet();
         ServletRegistration.Dynamic servletConfig = servletContext.addServlet("JavaConfigServlet", servlet);
         servletConfig.addMapping("/java");
+        FilterRegistration.Dynamic filterRegistration = servletContext.addFilter("SimpleFilter", new SimpleFilter());
+        filterRegistration.addMappingForUrlPatterns(null, true, "/*");
     }
 }

@@ -68,6 +68,17 @@ public class ShoppingCart implements Serializable {
         }
     }
 
+    public String getView() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for(ShoppingCartItem item : getItems()){
+            stringBuilder.append(item.getProductId())
+                    .append("-&gt")
+                    .append(item.getCount())
+                    .append("<br>");
+        }
+        return stringBuilder.toString();
+    }
+
     @Override
     public String toString() {
         return "ShoppingCart{" +

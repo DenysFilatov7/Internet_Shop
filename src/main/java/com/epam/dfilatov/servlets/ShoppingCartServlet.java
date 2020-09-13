@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Random;
 
-@WebServlet("/shopping-cart")
+@WebServlet("/current-cart")
 public class ShoppingCartServlet extends HttpServlet {
 
     @Override
@@ -51,12 +51,8 @@ public class ShoppingCartServlet extends HttpServlet {
         }
     }
 
-    private void showShoppingCart(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        if (SessionUtils.isCurrentShoppingCartCreated(req)) {
-            resp.getWriter().println(SessionUtils.getCurrentShoppingCart(req));
-        } else {
-            resp.getWriter().println("ShoppingCart is null");
-        }
+    private void showShoppingCart(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+            req.getRequestDispatcher("/WEB-INF/shopping-cart.jsp").forward(req, resp);
     }
 
     protected String shoppingCartToString(ShoppingCart shoppingCart) {
