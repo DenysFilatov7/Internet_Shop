@@ -1,0 +1,34 @@
+
+[
+java:S1117%"9Rename "login" which hides the field declared at line 20.(¶ó¬Çşÿÿÿÿ8ı°íÈ.
+r
+java:S1989-"PHandle the following exception that could be thrown by "getWriter": IOException.(‹…Ùªûÿÿÿÿ8‘—ğÈ.
+U	java:S106@"9Replace this use of System.out or System.err by a logger.(‡•Ï™8¬±öÈ.
+M
+java:S1128
+"0Remove this unused import 'java.io.PrintWriter'.(ÓŞÏÛ8ı°íÈ.
+u
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(ÜÒšº8ÏˆİœÈ.
+Z	java:S106+"9Replace this use of System.out or System.err by a logger.(ïù¯¯ûÿÿÿÿ8™°îÈ.
+r
+java:S1989)"PHandle the following exception that could be thrown by "getWriter": IOException.(ë“ù÷ÿÿÿÿÿ8ı°íÈ.
+c
+java:S3457C"AFormat specifiers should be used instead of string concatenation.(ºœ¡„ıÿÿÿÿ8‹‰úÈ.
+u
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(—ûÏ«8ÏˆİœÈ.
+z
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(œãë­úÿÿÿÿ8ÏˆİœÈ.
+s
+java:S34577"Q%n should be used in place of \n to produce the platform-specific line separator.(ºÒüˆüÿÿÿÿ8ı°íÈ.
+u
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(ÒûìÌ8ÏˆİœÈ.
+^
+java:S1117&"<Rename "password" which hides the field declared at line 21.(…ˆíİşÿÿÿÿ8ı°íÈ.
+U	java:S106:"9Replace this use of System.out or System.err by a logger.(Ö¢ÒŸ8˜–òÈ.
+
+java:S1989K"_Handle the following exceptions that could be thrown by "doGet": ServletException, IOException.(—ôÖ¢øÿÿÿÿ8İÇøœÈ.
+U	java:S1064"9Replace this use of System.out or System.err by a logger.(ûÓ¦³8ı°íÈ.
+s
+java:S3457="Q%n should be used in place of \n to produce the platform-specific line separator.(Ó ˆ±ùÿÿÿÿ8¬±öÈ.
+Z
+java:S1117$"=Rename "accessKey" which hides the field declared at line 19.(•ÙÛâ8ı°íÈ.

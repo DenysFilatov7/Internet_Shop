@@ -6,6 +6,7 @@ public final class Constants {
     public static final int MAX_PRODUCT_COUNT_PER_SHOPPING_CART = 10;
 
     public static final int MAX_PRODUCT_PER_SHOPPING_CART = 20;
+    public static final String ACCOUNT_ACTIONS_HISTORY = "ACCOUNT_ACTIONS_HISTORY";
 
     public enum Cookie {
         SHOPPING_CART("iSCC", 60 * 60 * 24 * 365);
