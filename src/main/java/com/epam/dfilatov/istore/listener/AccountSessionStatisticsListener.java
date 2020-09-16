@@ -1,6 +1,6 @@
-package com.epam.dfilatov.listener;
+package com.epam.dfilatov.istore.listener;
 
-import com.epam.dfilatov.constants.Constants;
+import com.epam.dfilatov.istore.constants.Constants;
 
 import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSessionEvent;

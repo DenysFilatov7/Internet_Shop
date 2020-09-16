@@ -1,4 +1,4 @@
-package com.epam.dfilatov.exception;
+package com.epam.dfilatov.istore.exception;
 
 public class ValidationException extends IllegalArgumentException {
 

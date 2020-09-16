@@ -1,4 +1,4 @@
-package com.epam.dfilatov.model;
+package com.epam.dfilatov.istore.model;
 
 import java.io.Serializable;
 

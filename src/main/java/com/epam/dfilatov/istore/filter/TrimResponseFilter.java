@@ -1,4 +1,4 @@
-package com.epam.dfilatov.filters;
+package com.epam.dfilatov.istore.filter;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Writer;
 
-@WebFilter({"/trim", "/trim-params.html"})
+@WebFilter({"/trim"})
 public class TrimResponseFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

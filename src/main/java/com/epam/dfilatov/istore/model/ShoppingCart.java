@@ -1,7 +1,7 @@
-package com.epam.dfilatov.model;
+package com.epam.dfilatov.istore.model;
 
-import com.epam.dfilatov.constants.Constants;
-import com.epam.dfilatov.exception.ValidationException;
+import com.epam.dfilatov.istore.constants.Constants;
+import com.epam.dfilatov.istore.exception.ValidationException;
 
 import java.io.Serializable;
 import java.util.Collection;

@@ -1,7 +1,7 @@
 package com.epam.dfilatov.istore.util;
 
-import com.epam.dfilatov.constants.Constants;
-import com.epam.dfilatov.model.ShoppingCart;
+import com.epam.dfilatov.istore.constants.Constants;
+import com.epam.dfilatov.istore.model.ShoppingCart;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

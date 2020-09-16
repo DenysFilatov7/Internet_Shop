@@ -1,6 +1,7 @@
-package com.epam.dfilatov.filters;
+package com.epam.dfilatov.istore.filter;
 
-import com.epam.dfilatov.model.ShoppingCart;
+import com.epam.dfilatov.istore.model.ShoppingCart;
+import com.epam.dfilatov.istore.model.ShoppingCartItem;
 import com.epam.dfilatov.istore.util.SessionUtils;
 
 import javax.servlet.*;
@@ -24,10 +25,10 @@ public class AutoRestoreShoppingCartFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) servletRequest;
         HttpServletResponse resp = (HttpServletResponse) servletResponse;
-        if(req.getSession().getAttribute(SHOPPING_CARD_DESERIALIZATION_DONE) == null){
-            if(!SessionUtils.isCurrentShoppingCartCreated(req)){
+        if (req.getSession().getAttribute(SHOPPING_CARD_DESERIALIZATION_DONE) == null) {
+            if (!SessionUtils.isCurrentShoppingCartCreated(req)) {
                 Cookie cookie = SessionUtils.findShoppingCartCookie(req);
-                if (cookie != null){
+                if (cookie != null) {
                     ShoppingCart shoppingCart = shoppingCartFromString(cookie.getValue());
                     SessionUtils.setCurrentShoppingCart(req, shoppingCart);
                 }
@@ -40,15 +41,29 @@ public class AutoRestoreShoppingCartFilter implements Filter {
     protected ShoppingCart shoppingCartFromString(String value) {
         ShoppingCart shoppingCart = new ShoppingCart();
         String[] items = value.split("\\|");
-        for(String item : items){
+        for (String item : items) {
             String[] data = item.split("-");
-            try{
+            try {
                 shoppingCart.addProduct(Integer.parseInt(data[0]), Integer.parseInt(data[1]));
-            }catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 e.printStackTrace();
             }
         }
         return shoppingCart;
+    }
+
+    protected String shoppingCartToString(ShoppingCart shoppingCart) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (ShoppingCartItem item : shoppingCart.getItems()) {
+            stringBuilder.append(item.getProductId())
+                    .append("-")
+                    .append(item.getCount())
+                    .append("|");
+        }
+        if (stringBuilder.length() > 0) {
+            stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+        }
+        return stringBuilder.toString();
     }
 
     @Override
