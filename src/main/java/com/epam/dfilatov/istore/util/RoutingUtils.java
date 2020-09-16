@@ -8,13 +8,13 @@ import java.io.IOException;
 public class RoutingUtils {
     public static void forwardToFragment(String jspFragment, HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/JSP/fragment/" + jspFragment).forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/jsp/fragment/" + jspFragment).forward(request, response);
     }
 
     public static void forwardToPage(String jspPage, HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setAttribute("currentPage", "page/" + jspPage);
-        request.getRequestDispatcher("/WEB-INF/JSP/page-template.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/jsp/page-template.jsp").forward(request, response);
     }
 
     public static void sendHTMLFragment(String text, HttpServletRequest request, HttpServletResponse response)

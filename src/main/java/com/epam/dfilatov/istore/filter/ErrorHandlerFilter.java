@@ -2,13 +2,15 @@ package com.epam.dfilatov.istore.filter;
 
 import com.epam.dfilatov.istore.util.RoutingUtils;
 
-import javax.servlet.*;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter("/")
+@WebFilter(filterName = "ErrorHandlerFilter")
 public class ErrorHandlerFilter extends AbstractFilter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -16,15 +18,13 @@ public class ErrorHandlerFilter extends AbstractFilter {
     }
 
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        HttpServletRequest request = (HttpServletRequest) servletRequest;
-        HttpServletResponse response = (HttpServletResponse) servletResponse;
+    public void doFilter(HttpServletRequest servletRequest, HttpServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         try {
             filterChain.doFilter(servletRequest, servletResponse);
-        } catch (Exception e){
-            String requestURL = request.getRequestURI();
-//            LOGGER.error("Request " + requestURL + " failed: " + e.getMessage(), e);
-            RoutingUtils.forwardToPage("error.jsp", request, response);
+        } catch (Exception e) {
+            String requestURL = servletRequest.getRequestURI();
+            LOGGER.error("Request " + requestURL + " failed: " + e.getMessage(), e);
+            RoutingUtils.forwardToPage("error.jsp", servletRequest, servletResponse);
         }
     }
 

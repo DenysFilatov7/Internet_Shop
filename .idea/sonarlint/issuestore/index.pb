@@ -61,8 +61,6 @@ q
 Asrc/main/java/com/epam/dfilatov/istore/filter/AbstractFilter.java,0\9\09789f666e285140abbe9afa6e16e30c47716bc3
 y
 Isrc/main/java/com/epam/dfilatov/istore/servlet/AllProductsController.java,f\f\fffef2764d4c20d71f96d1673021be304d5dd9d5
-Y
-)src/main/resources/application.properties,0\6\06f65155ec73600b9fc5c4dc2883d4bb84d8e284
 t
 Dsrc/main/java/com/epam/dfilatov/istore/service/BussinessService.java,f\7\f731e22c8f88631195e6e6bdb2ed764675d37b05
 Z
